@@ -1,7 +1,3 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Nemo
- * Date: 09.03.2017
- * Time: 19:38
- */
+
+echo __FILE__.' not done yet'.'<br/>';

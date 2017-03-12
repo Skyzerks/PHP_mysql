@@ -1,21 +1,10 @@
 <?php
 
-//main logic (file for action recognition)
+//if(isset($_action)) {
+    $string = 'controllers/'.$_action.'Controller.php';
+    include_once "$string";
+//}
+//include 'controllers/*.php';
+//include 'controllers/*.php';
 
-if($action==null){
-    include "templates/view_404.php";
-}
-if($action=='catalog'){
-    include 'controllers/controller_catalog.php';
-}
-else if($action=='product'){
-        include 'controllers/controller_product.php';
-}
-else if($action=='basket'){
-    include 'controllers/controller_basket.php';
-}
-else{
-    echo 'action= '.$action.'<br/>';
-    echo '_action= '.$_action.'<br/>';
-}
-
+//in development

@@ -6,5 +6,3 @@ order of included files in index.php:
 4. repository.php       //SQL queries and other function helpers
 5. routing.php          //routing
 6. controller.php       //main logic
-
-
