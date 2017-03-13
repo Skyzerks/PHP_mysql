@@ -1,7 +1,13 @@
 <?php
-//include 'templates/header.php';
+include 'templates/header.php';
 //something_in_the_making.php
-//include 'templates/footer.php';
+?>
+Something fantastic!<br/>
+<a href="/catalog">
+    <button>Catalog</button>
+</a><br/>
+<?php
+include 'templates/footer.php';
 
 
 
