@@ -1,35 +1,57 @@
 <?php //echo __FILE__.'<br/>';
 
+
+
 if($_action=='catalog'){
     if(isset($_id)){
-        $catalog = ($db->query('SELECT * FROM `categories`'));
+        $category = ($pdo->query('SELECT * FROM `categories`WHERE `id` = '.$_id));
         // var_dump( $categories->rowCount() );
 
-        foreach( $catalog as $key => $product ) {
-            print_r($product);
-            echo '<br/>';
+        foreach( $category as $key => $product ) {
+            echo '<a href="/product/'.$product['id'].'">'.$product['title'].'</a><br/>';
         }
         echo '<hr/>';
     }
     else{
-        $catalog = ($pdo->query('SELECT * FROM `categories`'));
+        $category = ($pdo->query('SELECT * FROM `categories`'));
         // var_dump( $categories->rowCount() );
 
-        foreach( $catalog as $key => $product ) {
-            print_r($product);
-            echo '<br/>';
+        foreach( $category as $key => $product ) {
+            echo '<a href="/product/'.$product['id'].'">'.$product['title'].'</a><br/>';
         }
         echo '<hr/>';
-
-
-//        $categories = sql( $db, 'SELECT * FROM `categories`', [], 'rows' );
-//
-//        foreach( $categories as $category ) {
-//
-//            echo '<a href="/catalog/'.$category['id'].'">'.$category['title'].'</a><br/>';
-//
-//        }
-
     }
-
 }
+
+//if( $_action == 'catalog' && $_id ) {
+//
+//    $category = sql( $pdo,
+//        'SELECT * FROM `categories` WHERE `id` = '.$_id,
+//        [],
+//        'rows'
+//    );
+//
+//    $products = sql( $pdo,
+//        'SELECT * FROM `products` WHERE `category_id` = '.$_id,
+//        [],
+//        'rows'
+//    );
+//    echo '<h1>'.$category[0]['title'].'</h1>';
+//
+//    foreach( $products as $product ) {
+//        echo '<a href="/product/'.$product['id'].'">'.$product['title'].'</a><br/>';
+//    }
+//}
+//if( $_action == 'product' && $_id ) {
+//
+//    $product = sql($pdo,
+//        'SELECT * FROM `products` WHERE `id` = ' . $_id,
+//        [],
+//        'rows'
+//    );
+//
+//    echo '<h1>' . $product[0]['title'] . '</h1>';
+//    echo '<p>' . $product[0]['description'] . '</p>';
+//    echo '<p>Price: ' . $product[0]['price'] . '</p>';
+//    echo '<button>Buy</button>';
+//}

@@ -4,10 +4,12 @@
 echo __FILE__.' in progress'.'<br/>';
 
 $routs = [
-    'login',
-    'account',
+    //'login',
+    //'account',
 
-    'catalog'
+    'catalog',
+    'product',
+    
 ];
 
 $action =[null, null, null];
@@ -64,5 +66,5 @@ if( $_SERVER['REQUEST_URI'] != '/' ) {
 }
 else{
     //include_once 'controllers/mainController.php';
-    $_action='login';
+    $_action='main';
 }

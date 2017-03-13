@@ -1,3 +1,12 @@
 <?php
 
-echo __FILE__.' not done yet'.'<br/>';
+// Configs
+define("HOST", "localhost"); //server address
+define("USER", "root");
+define("PASS", "1111");
+define("DBNAME", "base");
+
+
+$config = [
+    'admin_email' => 'admin@email.com'
+];

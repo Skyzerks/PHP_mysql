@@ -6,5 +6,3 @@
 //}
 //include 'controllers/*.php';
 //include 'controllers/*.php';
-
-//in development

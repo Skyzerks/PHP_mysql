@@ -18,15 +18,5 @@
     <![endif]-->
 </head>
 <body>
-<h1><?=$_action;?>/<?=$_subAction?>/<?=$_id ?>></h1>
 
 
-
-
-
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="bootstrap/js/bootstrap.js"></script>
-</body>
-</html>
