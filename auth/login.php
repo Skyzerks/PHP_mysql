@@ -1,11 +1,10 @@
-<form id="authForm" action="/login" method="POST" enctype="multipart/form-data">
+<form id="authForm" action="/main" method="POST" enctype="multipart/form-data">
     <input type="text" id="name" name="name" placeholder="Name"> <br/>
     <input type="text" id="email" name="email" placeholder="Email"> <br/>
 <!--    <input type="text" id="message" name="message" placeholder="Message"> <br/>-->
 
-    <a href="/main">
-        <button type="submit">Log In</button>
-    </a><br/>
+
+        <input type="submit" value="Log in"><br/>
 </form>
 
 

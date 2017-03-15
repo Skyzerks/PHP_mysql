@@ -10,7 +10,23 @@ Something fantastic!<br/>
 <a href="/login">
     <button>Log In</button>
 </a><br/>
+
+
+    <button >Log In</button>
 <?php
+
+if($_SESSION['login']['name']&& $_SESSION['login']['email'] != null){
+
+    echo 'Loged in as:'.'<br/>';
+    echo $_SESSION['login']['name']. '<br/>';
+    echo $_SESSION['login']['email'].'<br/>';
+
+}
+else{
+    $_action='login';
+    include_once 'index/controller';
+}
+
 include 'templates/footer.php';
 
 
