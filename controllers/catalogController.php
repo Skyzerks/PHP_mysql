@@ -2,7 +2,7 @@
 
 
 
-if($_action=='catalog'){
+//if($_action=='catalog'){
     if(isset($_id)){
         $category = ($pdo->query('SELECT * FROM `categories`WHERE `id` = '.$_id));
         // var_dump( $categories->rowCount() );
@@ -21,7 +21,10 @@ if($_action=='catalog'){
         }
         echo '<hr/>';
     }
-}
+//}
+
+
+
 
 //if( $_action == 'catalog' && $_id ) {
 //

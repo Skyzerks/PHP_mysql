@@ -6,6 +6,10 @@ Something fantastic!<br/>
 <a href="/catalog">
     <button>Catalog</button>
 </a><br/>
+
+<a href="/login">
+    <button>Log In</button>
+</a><br/>
 <?php
 include 'templates/footer.php';
 

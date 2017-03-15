@@ -4,7 +4,7 @@
 echo __FILE__.' in progress'.'<br/>';
 
 $routs = [
-    //'login',
+    'login',
     //'account',
 
     'catalog',
