@@ -1,10 +1,11 @@
 <?php
 
-//echo 'it\'s not done yet'.'<br/>';
-echo __FILE__.' in progress'.'<br/>';
+//echo __FILE__.' in progress'.'<br/>';
 
 $routs = [
     'login',
+    'logout',
+    'basket',
     //'account',
 
     'catalog',
@@ -57,10 +58,11 @@ if( $_SERVER['REQUEST_URI'] != '/' ) {
     }
 
 //    var_dump($urlArray);
-    echo '<hr>';
-    echo '$_action= '.$_action.'<br/>';
-    echo '$_subAction= '.$_subAction.'<br/>';
-    echo '$_id= '.$_id.'<br/>';
+//    echo '<hr>';
+//    echo '$_action= '.$_action.'<br/>';
+//    echo '$_subAction= '.$_subAction.'<br/>';
+//    echo '$_id= '.$_id.'<br/>';
+    
     echo '<hr>';
     //exit();
     include_once "controller.php";

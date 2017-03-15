@@ -1,6 +1,6 @@
 <?php
 
-echo __FILE__.' in progress'.'<br/>';
+//echo __FILE__.' in progress'.'<br/>';
 
 // Connect to database
 try {

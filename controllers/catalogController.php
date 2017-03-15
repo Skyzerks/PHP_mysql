@@ -1,11 +1,19 @@
 <?php //echo __FILE__.'<br/>';
 
+include_once 'auth/user.php';
 
 
-//if($_action=='catalog'){
+if($_action=='catalog'){
     if(isset($_id)){
-        $category = ($pdo->query('SELECT * FROM `categories`WHERE `id` = '.$_id));
+        //$category = ($pdo->query('SELECT * FROM `categories`WHERE `id` = '.$_id));
         // var_dump( $categories->rowCount() );
+
+        $category = sql($pdo,
+            'SELECT * FROM `categories`WHERE `id` = ?',
+            [$_id],
+            'rows'
+        );
+
 
         foreach( $category as $key => $product ) {
             echo '<a href="/product/'.$product['id'].'">'.$product['title'].'</a><br/>';
@@ -21,7 +29,7 @@
         }
         echo '<hr/>';
     }
-//}
+}
 
 
 

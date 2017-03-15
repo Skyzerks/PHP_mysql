@@ -11,10 +11,10 @@ function sql($db, $q, $params = [], $return = null) {
     $res = $stmt->execute($params);
     // Decide whether to return the rows themselves, or query status
     if ($return == "rows") {
-        return $stmt->fetchAll();
+        return $stmt->fetchAll(); //rows
     }
     else {
-        return $res;
+        return $res; //boolean
     }
 }
 
@@ -40,10 +40,11 @@ function email_check($email){
 //}
 
 
-
-function view($_View, $data = [],$arg2 = null){
+//view redirection
+function view($_View, $data = []){
     include "templates/header.php";
     if (file_exists('templates/'.$_View.'View.php')){
         include 'templates/'.$_View.'View.php';
     }
+    include "templates/footer.php";
 }
