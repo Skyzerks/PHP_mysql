@@ -3,8 +3,9 @@
     <input type="text" id="email" name="email" placeholder="Email"> <br/>
 <!--    <input type="text" id="message" name="message" placeholder="Message"> <br/>-->
 
-    <button type="submit">Log In</button>
-
+    <a href="/main">
+        <button type="submit">Log In</button>
+    </a><br/>
 </form>
 
 
@@ -23,7 +24,7 @@ if(($_POST)!= null){
     echo $_SESSION['login']['email']. '<br/>';
 //    echo $_POST['message'] . '<br/>';
     $_action='main';
-    include_once 'index/controller.php';
+    
 
 }
 

@@ -9,6 +9,7 @@ $routs = [
 
     'catalog',
     'product',
+    'main'
     
 ];
 
