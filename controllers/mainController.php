@@ -17,7 +17,7 @@ else {
     header('Location: /login');
     exit;
 }
-
+//use function to add bootstrap 
 view('main');
 
 //include 'templates/mainView.php';

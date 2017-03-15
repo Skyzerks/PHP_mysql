@@ -63,7 +63,7 @@ if( $_SERVER['REQUEST_URI'] != '/' ) {
 //    echo '$_subAction= '.$_subAction.'<br/>';
 //    echo '$_id= '.$_id.'<br/>';
     
-    echo '<hr>';
+    //echo '<hr>';
     //exit();
     include_once "controller.php";
 }

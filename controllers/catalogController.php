@@ -15,21 +15,16 @@ if($_action=='catalog'){
         );
 
 
-        foreach( $category as $key => $product ) {
-            echo '<a href="/product/'.$product['id'].'">'.$product['title'].'</a><br/>';
-        }
-        echo '<hr/>';
     }
     else{
         $category = ($pdo->query('SELECT * FROM `categories`'));
         // var_dump( $categories->rowCount() );
 
-        foreach( $category as $key => $product ) {
-            echo '<a href="/product/'.$product['id'].'">'.$product['title'].'</a><br/>';
-        }
-        echo '<hr/>';
     }
 }
+
+//use function to add bootstrap
+view('catalog', $category);
 
 
 

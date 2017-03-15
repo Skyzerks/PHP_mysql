@@ -1,7 +1,6 @@
 <!--Something fantastic!<br/>-->
-<a href="/catalog">
-    <button>Catalog</button>
-</a><br/>
+    <a href="/catalog"><button>Catalog</button></a>
+<br/>
 
 
 
