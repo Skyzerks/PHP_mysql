@@ -2,7 +2,7 @@
 <?php
 
 echo 'Logged in as:' . '<br/>';
-echo $_SESSION['login']['name'].'<br/>';
+echo $_SESSION['login']['login'].'<br/>';
 echo $_SESSION['login']['email'].'<br/>';
 
 ?>

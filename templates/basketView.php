@@ -1,7 +1,7 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Nemo
- * Date: 16.03.2017
- * Time: 1:28
- */
+
+
+foreach( $data as $key => $product ) {
+    echo $product['product_id'].' | '.$product['title'].' | '.$product['price'].'</a><br/>';
+}
+echo '<hr/>';

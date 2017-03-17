@@ -2,6 +2,8 @@
 
 echo __FILE__.' in progress'.'<br/>';
 
+include_once 'repository/authModule.php';
+
 
 // Simple function to handle PDO prepared statements
 function sql($db, $q, $params = [], $return = null) {
@@ -28,17 +30,6 @@ function email_check($email){
         return 0;
     }
 }
-
-//function validate($array){
-//
-//    if(email_check($array)!=0) {
-//        foreach ($array as $key => $val) {
-//            break;
-//        }
-//    }
-//    return $array;
-//}
-
 
 //view redirection
 function view($_View, $data = []){
