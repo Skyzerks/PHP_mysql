@@ -2,8 +2,16 @@
 <?php
 
 echo 'Logged in as:' . '<br/>';
-echo $_SESSION['login']['login'].'<br/>';
-echo $_SESSION['login']['email'].'<br/>';
+//echo $_POST['name'].'<br/>';
+//echo $_POST['email'].'<br/>';
+
+
+
+echo $_SESSION['login'].'<br/>';
+echo $_SESSION['email'].'<br/>';
+
+var_dump($_SESSION);
+var_dump($authUser);
 
 ?>
 

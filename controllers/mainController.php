@@ -3,8 +3,8 @@
 
 
 
-if(isset($_SESSION['login'])) {
-    if ($_SESSION['login']['login'] && $_SESSION['login']['email'] != null) {
+if(isset($_POST['name'])) {
+    if ($_POST['name'] && $_POST['email'] != null) {
 
         include_once 'auth/user.php';
     }
@@ -13,6 +13,7 @@ else {
     header('Location: /login');
     exit;
 }
+
 //use function to add bootstrap 
 view('main');
 
