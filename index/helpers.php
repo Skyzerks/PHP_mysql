@@ -1,8 +1,7 @@
 <?php
 
-echo __FILE__.' in progress'.'<br/>';
+//echo __FILE__.' in progress'.'<br/>';
 
-include_once 'repository/authModule.php';
 
 
 // Simple function to handle PDO prepared statements
@@ -33,9 +32,19 @@ function email_check($email){
 
 //view redirection
 function view($_View, $data = []){
+
     include "templates/header.php";
+
     if (file_exists('templates/'.$_View.'View.php')){
         include 'templates/'.$_View.'View.php';
     }
+
     include "templates/footer.php";
+}
+
+
+function buy_product($id)
+{
+    $_SESSION['basket'][]= $id;
+    $_SESSION['flash_msg'] = 'Added to basket';
 }

@@ -1,33 +1,16 @@
 <?php //echo __FILE__.'<br/>';
 
-include_once 'auth/user.php';
+if($_action=='catalog' && isset($_id)){
 
-
-if($_action=='catalog'){
-    if(isset($_id)){
-        //$category = ($pdo->query('SELECT * FROM `categories`WHERE `id` = '.$_id));
-        // var_dump( $categories->rowCount() );
-
-        $category = sql($pdo,
-            'SELECT * FROM `categories`WHERE `id` = ?',
-            [$_id],
-            'rows'
-        );
-
-
-    }
-    else{
-        $category = ($pdo->query('SELECT * FROM `categories`'));
-        // var_dump( $categories->rowCount() );
-
-    }
+    $category = getCategory($pdo, $_id)[0];
+    $products = getProducts($pdo, $_id);
+    //use function to add bootstrap
+    view('category', ['category' => $category, 'products' => $products]);
 }
-
-//use function to add bootstrap
-view('catalog', $category);
-
-
-
+else {
+    $categories = ($pdo->query('SELECT * FROM `categories`'));
+    view('catalog', ['categories' => $categories ]);
+}
 
 //if( $_action == 'catalog' && $_id ) {
 //

@@ -1,6 +1,5 @@
 <?php
-include_once 'auth/user.php';
-
+//include_once 'auth/user.php';
 if( $_action == 'product' && $_id ) {
 
     $product = sql($pdo,
@@ -9,15 +8,10 @@ if( $_action == 'product' && $_id ) {
         'rows'
     );
 
+    if (isset($_POST['btn'])) {
+        buy_product($_id);
+    }
+
     view('product', $product);
-    //include_once 'templates/productView.php';
-
+//include_once 'templates/productView.php';
 }
-
-function buy_product($id)
-{
-    $_SESSION['basket'][]= $id;
-    echo 'Added to basket';
-}
-if (isset($_POST['btn']))
-    buy_product($_id);

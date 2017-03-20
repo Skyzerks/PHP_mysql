@@ -1,37 +1,27 @@
 <?php
 
-include 'auth/login.php';
+if($_action=='login') {
 
+    if($_POST != null) {
+        $login = isset($_POST['name']) ? $_POST['name'] : null;
+        $pass = isset($_POST['password']) ? $_POST['password'] : null;
+        $email = isset($_POST['email']) ? $_POST['email'] : null;
 
-if($_action=='login'&& $_POST != null) {
-    $_login = isset($_POST['name']) ? $_POST['name'] : null;
-    $_pass = isset($_POST['pass']) ? $_POST['pass'] : null;
-    $_email = isset($_POST['email']) ? $_POST['email'] : null;
-    $uniqueUser = checkUniqueUser($pdo,$_email,$_login);
+        $uniqueUser = checkUniqueUser($pdo, $email, $login, $pass);
 
+        if (count($uniqueUser)>0) {
 
-    if ($uniqueUser) {
-        $_SESSION['email'] = $_email;
-        $_SESSION['login'] = $_login;
-        $_SESSION['flash_msg'] = "User '<b>" . $_login . "</b>' logged in";
-        header('location: /');
-        exit();
-//        if ($_POST['pass'] != $_pass) {
-//            $_SESSION['flash_msg'] = "User '<b>" . $login . "</b>' - ' try to remember the password and try again'";
-//            header('location: /login');
-//            exit();
-//        }
+            $_SESSION['email'] = $uniqueUser[0]['id'];
+            $_SESSION['login'] = $uniqueUser[0]['name'];
+            $_SESSION['flash_msg'] = "User '<b>" .$uniqueUser[0]['name']. "</b>' has logged in";
+            header('location: /');
+            exit();
+        }
+        else {
+            $_SESSION['flash_msg'] = "User " . $login . " is not valid";
+        }
     }
-    else {
-        $_SESSION['flash_msg'] = "User " . $_login . " is not valid";
-        header('location: /login');
-        exit();
-    }
-}
-
-if(isset($_SESSION['flash_msg'])){
-    echo $_SESSION['flash_msg'].'<br/>';
-    unset($_SESSION['flash_msg']);
+    view('login');
 }
 
 //header('location: /');

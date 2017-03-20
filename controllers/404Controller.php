@@ -1,3 +1,5 @@
 <?php
 
-include 'templates/404View.php';
+view('404');
+
+//include 'templates/404View.php';

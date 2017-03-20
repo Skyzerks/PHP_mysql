@@ -4,35 +4,23 @@
 
 $routs = [
     'login',
+    'registration',
     'logout',
     'basket',
     //'account',
 
     'catalog',
-    'product',
-    'main'
-    
+    'product'
 ];
 
-$action =[null, null, null];
-$_action = $action[0];
-$_subAction= $action[1];
-$_id = $action[2];
+$_action = $_subAction = $_id = null;
 
 if( $_SERVER['REQUEST_URI'] != '/' ) {
-
-
 
     $url = parse_url($_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']);
     $urlArray = explode('/', $url['path']);
     $urlArray = array_filter($urlArray);
 //    $_action = $urlArray[1];
-
-     if(isset($urlArray[4])){
-        include_once 'controllers/404Controller.php';
-        exit();
-    }
-
     foreach ($urlArray as $key => $_url){
         if(isset($_url)) {
             if ($key == 1) {
@@ -51,10 +39,18 @@ if( $_SERVER['REQUEST_URI'] != '/' ) {
 //        echo '<br/>';
     }
 
+
+//     if(isset($urlArray[4])){
+//        include_once 'controllers/404Controller.php';
+//        exit();
+//    }
+
     if( !in_array( $_action, $routs ) ) {
         $_action = null;
         $_subAction = null;
+        header("HTTP/1.0 404 Not Found");
         include_once 'controllers/404Controller.php';
+        exit();
     }
 
 //    var_dump($urlArray);

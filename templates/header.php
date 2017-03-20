@@ -19,4 +19,36 @@
 </head>
 <body>
 
+<?php
+if(isset($_SESSION['user_id'])) {
+    echo 'Logged in as:' . '<br/>';
+    echo $_SESSION['user_id'] . '<br/>';
+    echo $_SESSION['user_name'] . '<br/>';
+}
+else {
+    echo 'You are not logged in <br/>';
+}
+?>
 
+<hr/>
+<a href="/"><button>Main page</button></a>
+<a href="/basket"><button>To cart</button></a>
+<br/>
+<hr/>
+
+<?php
+
+if(isset($_SESSION['flash_msg'])){
+echo $_SESSION['flash_msg'].'<br/>';
+unset($_SESSION['flash_msg']);
+}
+
+?>
+
+<?php if( isset( $_SESSION['user_id'] ) ) { ?>
+    <?=$_SESSION['user_name']?>  <a href="/logout">Logout</a>
+<?php } else  { ?>
+    <a href="/login">Login</a> | <a href="/registration">Registration</a>
+<?php } ?>
+
+<hr/>
