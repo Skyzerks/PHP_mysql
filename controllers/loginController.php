@@ -11,8 +11,11 @@ if($_action=='login') {
 
         if (count($uniqueUser)>0) {
 
-            $_SESSION['email'] = $uniqueUser[0]['id'];
-            $_SESSION['login'] = $uniqueUser[0]['name'];
+            $_SESSION['user_id'] = $uniqueUser[0]['id'];
+            $_SESSION['user_name'] = $uniqueUser[0]['name'];
+            $_SESSION['email'] = $uniqueUser[0]['email'];
+            $_SESSION['login'] = $uniqueUser[0]['login'];
+            $_SESSION['role'] = $uniqueUser[0]['role'];
             $_SESSION['flash_msg'] = "User '<b>" .$uniqueUser[0]['name']. "</b>' has logged in";
             header('location: /');
             exit();

@@ -1,7 +1,12 @@
 <?php
-
 include_once 'repository/authModule.php';
-include_once 'repository/catalogRepository.php';
 
-
-//echo __FILE__.' not done yet'.'<br/>';
+$repositoryRoutes = [
+    'catalog',
+    'user'
+];
+foreach ($repositoryRoutes as $route){
+    include_once 'repository/'.$route.'Repository.php';
+}
+//include_once 'repository/catalogRepository.php';
+//include_once 'repository/userRepository.php';

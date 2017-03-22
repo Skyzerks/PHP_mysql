@@ -8,5 +8,6 @@ define("DBNAME", "base");
 
 
 $config = [
-    'admin_email' => 'admin@email.com'
+    'admin_email' => 'admin@email.com',
+    'items_on_page' => 20
 ];

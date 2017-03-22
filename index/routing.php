@@ -10,7 +10,10 @@ $routs = [
     //'account',
 
     'catalog',
-    'product'
+    'product',
+    'order',
+
+    'admin'
 ];
 
 $_action = $_subAction = $_id = null;
@@ -67,3 +70,4 @@ else{
     //include_once 'controllers/mainController.php';
     $_action='main';
 }
+

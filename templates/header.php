@@ -22,8 +22,8 @@
 <?php
 if(isset($_SESSION['user_id'])) {
     echo 'Logged in as:' . '<br/>';
-    echo $_SESSION['user_id'] . '<br/>';
-    echo $_SESSION['user_name'] . '<br/>';
+    echo $_SESSION['login'] . '<br/>';
+    echo $_SESSION['email'] . '<br/>';
 }
 else {
     echo 'You are not logged in <br/>';
