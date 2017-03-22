@@ -7,7 +7,7 @@ define("PASS", "1111");
 define("DBNAME", "base");
 
 
-$config = [
+$_config = [
     'admin_email' => 'admin@email.com',
     'items_on_page' => 20
 ];

@@ -6,7 +6,7 @@ if(isset($_action)) {
         include_once "$controllerFileName";
     }
     else {
-        if( isset( $_SESSION['user'] ) && $_SESSION['user']['role'] == 'admin' )  {
+        if($_SESSION['role'] == 'admin' )  {
             $_method = isset($_GET['method'])? $_GET['method'] : null;//$_method = $_GET['method'] ?? null;
             $_page = isset($_GET['page'])? $_GET['page'] : 0;
             include 'templates/admin/headerView.php';

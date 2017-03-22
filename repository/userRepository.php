@@ -1,5 +1,7 @@
 <?php
 
+global $_config;
+
 function getUsers( $pdo ) {
     global $_config, $_page;
     $users = sql($pdo,

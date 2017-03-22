@@ -3,9 +3,10 @@
 //echo __FILE__.' in progress'.'<br/>';
 
 
-
 // Simple function to handle PDO prepared statements
 function sql($db, $q, $params = [], $return = null) {
+    var_dump($q);
+//    exit();
     // Prepare statement
     $stmt = $db->prepare($q);
     // Execute statement
@@ -17,6 +18,7 @@ function sql($db, $q, $params = [], $return = null) {
     else {
         return $res; //boolean
     }
+
 }
 
 
@@ -32,6 +34,8 @@ function email_check($email){
 
 //view redirection
 function view($_View, $data = []){
+
+    global $_action, $_subAction, $_config, $_page;
 
     include "templates/header.php";
 

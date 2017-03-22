@@ -4,17 +4,17 @@ session_start();
 
 
 //custom functions
-include_once 'index/helpers.php';
+include_once 'helpers.php';
 //all configurations
-include_once 'index/config.php';
+include_once 'config.php';
 //database connection
-include_once 'index/database.php';
+include_once 'database.php';
 //SQL queries and other function helpers
-include_once 'index/repository.php';
+include_once 'repository.php';
 //routing
-include_once 'index/routing.php';
+include_once 'routing.php';
 //main logic
-include_once 'index/controller.php';
+include_once 'controller.php';
 
 
 //include "random.php";

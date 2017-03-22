@@ -1,4 +1,6 @@
 
+
+
 <table style="border-collapse: collapse;">
 
     <?php $k=$_page*$_config['items_on_page']; ?>
