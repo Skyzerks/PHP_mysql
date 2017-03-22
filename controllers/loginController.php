@@ -1,6 +1,6 @@
 <?php
 
-if($_action=='login') {
+if($_action=='login'&&!isset($_SESSION['role'])){
 
     if($_POST != null) {
         $login = isset($_POST['name']) ? $_POST['name'] : null;

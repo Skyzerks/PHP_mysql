@@ -2,6 +2,7 @@
 //entered the page
 session_start();
 
+
 //custom functions
 include_once 'index/helpers.php';
 //all configurations

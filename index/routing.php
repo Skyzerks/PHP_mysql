@@ -13,7 +13,8 @@ $routs = [
     'product',
     'order',
 
-    'admin'
+    'admin',
+    'user'
 ];
 
 $_action = $_subAction = $_id = null;
