@@ -56,6 +56,12 @@ if( $_SERVER['REQUEST_URI'] != '/' ) {
         exit();
     }
 
+    if( $_action == 'admin' ) {
+        $_method = isset($_GET['method']) ? $_GET['method'] : null; //$_method = $_GET['method'] ?? null;
+        $_page = isset($_GET['page']) ? $_GET['page'] : 0;
+    }
+
+
 //    var_dump($urlArray);
 //    echo '<hr>';
 //    echo '$_action= '.$_action.'<br/>';
@@ -64,7 +70,7 @@ if( $_SERVER['REQUEST_URI'] != '/' ) {
     
     //echo '<hr>';
     //exit();
-    include_once "controller.php";
+//    include_once "controller.php";
 }
 else{
     //include_once 'controllers/mainController.php';

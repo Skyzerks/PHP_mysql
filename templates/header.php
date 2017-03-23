@@ -19,16 +19,24 @@
 </head>
 <body>
 
+<?php if( isset( $_SESSION['user_id'] ) ) { ?>
+    <img src="/files/avatars/avatar_<?=$_SESSION['user_id']?>.jpg" style="max-width:100px;" alt="">
+    <?=$_SESSION['user_name']?>  <a href="/logout">Logout</a>
+<?php } else  { ?>
+    You are not logged in <br/>
+    <a href="/login">Login</a> | <a href="/registration">Registration</a>
+<?php } ?>
+
 <?php
-if(isset($_SESSION['user_id'])) {
-    echo 'Logged in as:' . '<br/>';
-    echo $_SESSION['login'] . '<br/>';
-    echo $_SESSION['email'] . '<br/>';
-}
-else {
-    echo 'You are not logged in <br/>';
-}
-?>
+//if(isset($_SESSION['user_id'])) {
+//    echo 'Logged in as:' . '<br/>';
+//    echo $_SESSION['login'] . '<br/>';
+//    echo $_SESSION['email'] . '<br/>';
+//}
+//else {
+//    echo 'You are not logged in <br/>';
+//}
+//?>
 
 <hr/>
 <a href="/"><button>Main page</button></a>
@@ -45,10 +53,3 @@ unset($_SESSION['flash_msg']);
 
 ?>
 
-<?php if( isset( $_SESSION['user_id'] ) ) { ?>
-    <?=$_SESSION['user_name']?>  <a href="/logout">Logout</a>
-<?php } else  { ?>
-    <a href="/login">Login</a> | <a href="/registration">Registration</a>
-<?php } ?>
-
-<hr/>
