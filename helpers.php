@@ -1,11 +1,13 @@
 <?php
 
-//echo __FILE__.' in progress'.'<br/>';
-
+function cap($string, $type){
+    echo '<br>'.$string.' '.$type.' does not exist'.'<br>';
+}
 
 // Simple function to handle PDO prepared statements
 function sql($db, $q, $params = [], $return = null) {
     var_dump($q);
+    echo '<br>';
 //    exit();
     // Prepare statement
     $stmt = $db->prepare($q);
@@ -37,17 +39,17 @@ function view($_View, $data = []){
 
     global $_action, $_subAction, $_config, $_page;
 
-    include "templates/header.php";
+    include_once "templates/header.php";
 
     if( $_action == 'admin' ) {
-        include 'templates/admin/headerView.php';
+        include_once 'templates/admin/headerView.php';
     }
 
     if (file_exists('templates/'.$_View.'View.php')){
-        include 'templates/'.$_View.'View.php';
+        include_once 'templates/'.$_View.'View.php';
     }
 
-    include "templates/footer.php";
+    include_once "templates/footer.php";
 }
 
 

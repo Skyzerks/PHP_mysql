@@ -2,7 +2,7 @@
     $headerRouts = [
         'Home'      => '',
         'Users'     => '/user',
-        'Categories'=> '/category',
+        'Categories'=> '/categories',
         'Products'  => '/product',
         'Reviews'   => '/review',
         'Orders'    => '/order'

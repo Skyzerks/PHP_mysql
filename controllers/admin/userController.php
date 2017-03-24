@@ -27,6 +27,7 @@ if( $_subAction == 'user'&&isset($_method)){
             deleteUser( $pdo, $id );
 
             header('location: /admin/user');
+            exit();
             break;
         }
         case 'update':{

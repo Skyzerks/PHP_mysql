@@ -1,4 +1,3 @@
-<h1>Hi!</h1>
-<?php
-echo ' Do: '.__FILE__.'<br/>';
+<h3><?=cap($_SERVER['REQUEST_URI'], ' route')  ?></h3>
+
 

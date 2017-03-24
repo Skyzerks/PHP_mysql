@@ -1,14 +1,5 @@
 <?php
 
-function getCategory($pdo, $id){
-    $category = sql($pdo,
-        'SELECT * FROM `categories` WHERE `id` = ?',
-        [$id],
-        'rows'
-    );
-
-    return $category;
-}
 function getProducts($pdo, $category_id){
     $products = sql($pdo,
         'SELECT * FROM `products` WHERE `category_id` = ?',
@@ -26,4 +17,14 @@ function getProduct($pdo, $id){
     );
 
     return $product;
+}
+
+
+function createProduct($pdo){
+
+    echo '<br> createProduct() cap <br>';
+}
+function deleteProduct($pdo){
+
+    echo '<br> createProduct() cap <br>';
 }
