@@ -50,3 +50,11 @@ function saveUser( $pdo, $userData ) {
 
     return $user;
 }
+
+
+function deleteUser( $pdo, $nameId ){
+    $delete = $pdo->prepare("DELETE FROM `users` WHERE `id`= $nameId");
+    $delete->execute(array($nameId));
+
+    return $delete;
+}

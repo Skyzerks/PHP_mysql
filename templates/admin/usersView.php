@@ -1,5 +1,5 @@
-<a href="/admin/user/?method=create">Create user</a>
 <br>
+<a href="/admin/user/?method=create">Create user</a>
 <br>
 
 <table style="border-collapse: collapse;">
@@ -13,7 +13,7 @@
                 <?= $k ?>
             </td>
             <td style="border: solid 1px black;  padding: 10px">
-                <?= $user['name'] ?>
+                <a href="/admin/user?method=view&id=<?=$user['id']?>"><?= $user['name'] ?></a>
             </td>
             <td style="border: solid 1px black; padding: 10px">
                 <?= $user['email'] ?>
