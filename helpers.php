@@ -1,5 +1,29 @@
 <?php
 
+function show($string, $extra = [])
+{
+    //in development
+    $array = [
+        //add more if needed
+        'post' => $_POST,
+        'session' => $_SESSION,
+        'get' => $_GET
+    ];
+    foreach ($array as $key=> $var){
+        if($string==$key){
+            var_dump($var);
+        }
+        if (!array_key_exists($string, $array)) {
+
+            cap($string, 'function');
+            echo 'add more data to '.__FILE__.'<br/>';
+            exit();
+        }
+    }
+
+
+}
+
 function cap($string, $type){
     echo '<br>'.$string.' '.$type.' does not exist'.'<br>';
 }

@@ -2,6 +2,17 @@
 
 global $_config;
 
+function getUsersCount( $pdo ) {
+
+    $usersCount = sql($pdo,
+        'SELECT COUNT(*) as users_count FROM `users`',
+        [],
+        'rows'
+    );
+
+    return $usersCount;
+}
+
 function getUsers( $pdo ) {
     global $_config, $_page;
     $users = sql($pdo,
@@ -13,17 +24,6 @@ function getUsers( $pdo ) {
     );
 
     return $users;
-}
-
-function getUsersCount( $pdo ) {
-
-    $usersCount = sql($pdo,
-        'SELECT COUNT(*) as users_count FROM `users`',
-        [],
-        'rows'
-    );
-
-    return $usersCount;
 }
 
 function getUser( $pdo, $id ) {
@@ -51,6 +51,11 @@ function saveUser( $pdo, $userData ) {
     return $user;
 }
 
+function createUser($pdo, $name, $email, $password, $login){
+    $insert = $pdo->prepare("INSERT INTO users(`name`,`role`,`email`,`password`,`login`) VALUES (?,?,?,?,?)");
+    $res = $insert->execute(array($name,'customer',$email, $password, $login));
+    return $res;
+}
 
 function deleteUser( $pdo, $nameId ){
     $delete = $pdo->prepare("DELETE FROM `users` WHERE `id`= (?)");

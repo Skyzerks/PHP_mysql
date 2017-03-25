@@ -1,9 +1,4 @@
 <?php
-function createUser($pdo, $name, $email, $password, $login){
-    $insert = $pdo->prepare("INSERT INTO users(`name`,`role`,`email`,`password`,`login`) VALUES (?,?,?,?,?)");
-    $res = $insert->execute(array($name,'customer',$email, $password, $login));
-    return $res;
-}
 function checkUniqueUser($pdo,$email,$login, $pass){
 
     $user = sql($pdo,

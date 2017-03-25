@@ -1,7 +1,7 @@
 <?php
-include_once 'repository/authModule.php';
 
 $repositoryRoutes = [
+    'auth',
 //    'catalog',
     'user',
     'categories',

@@ -39,6 +39,7 @@ if( $_subAction == 'user'&&isset($_method)){
                 move_uploaded_file($_FILES['avatar']['tmp_name'], 'files/avatars/'.$fileName);
             }
 
+            $_SESSION['flash_msg']='user updated';
             header('location: /admin/user/?method=edit&id='.$_POST['form']['id']);
             exit();
             break;

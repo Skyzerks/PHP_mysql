@@ -40,19 +40,19 @@
 
 
 
-<select name="form[category]" id="">
-
-
-
-    <?php foreach( $data['categories'] as $category ) { ?>
-
-        <option value="<?=$category['id'] ?>">
-            <?=$category['title'] ?>
-        </option>
-
-    <?php } ?>
-
-</select>
+<!--<select name="form[category]" id="">-->
+<!---->
+<!---->
+<!---->
+<!--    --><?php //foreach( $data['categories'] as $category ) { ?>
+<!---->
+<!--        <option value="--><?//=$category['id'] ?><!--">-->
+<!--            --><?//=$category['title'] ?>
+<!--        </option>-->
+<!---->
+<!--    --><?php //} ?>
+<!---->
+<!--</select>-->
 
 
 <div class="pagination">

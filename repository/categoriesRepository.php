@@ -22,6 +22,7 @@ function getCategories( $pdo ) {
 }
 
 function getCategory($pdo, $id){
+
     $category = sql($pdo,
         'SELECT * FROM `categories` WHERE `id` = ?',
         [$id],
@@ -31,11 +32,29 @@ function getCategory($pdo, $id){
     return $category;
 }
 
-function createCategory($pdo){
+function saveCategory( $pdo, $userData ){
 
-    echo '<br> createCategory() cap <br>';
+    $category = sql($pdo,
+        'UPDATE `categories` set 
+          `title` = "' . $userData['title'] . '"
+          WHERE `id` = ' . $userData['id']
+    );
+
+    return $category;
 }
-function deleteCategory($pdo){
 
-    echo '<br> createCategory() cap <br>';
+
+function createCategory($pdo, $title){
+
+    $insert = $pdo->prepare("INSERT INTO `categories`(`title`) VALUES (?)");
+    $res = $insert->execute(array($title));
+
+    return $res;
+}
+function deleteCategory($pdo, $nameId){
+
+    $delete = $pdo->prepare("DELETE FROM `categories` WHERE `id`= (?)");
+    $delete->execute(array($nameId));
+
+    return $delete;
 }
