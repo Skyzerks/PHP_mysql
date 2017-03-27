@@ -5,6 +5,24 @@
 <table style="border-collapse: collapse;">
 
     <?php $k=$_page*$_config['items_on_page']; ?>
+
+    <tr  style="border-collapse: collapse;">
+        <td style="border: solid 1px black; padding: 10px">
+            Number
+        </td>
+        <td style="border: solid 1px black; padding: 10px">
+            Name
+        </td>
+        <td style="border: solid 1px black; padding: 10px">
+            Email
+        </td>
+        <td style="border: solid 1px black; padding: 10px">
+            Action
+        </td>
+        <td style="border: solid 1px black; padding: 10px">
+            Action
+        </td>
+    </tr>
     <?php foreach( $data['users'] as $user ) { ?>
         <?php $k++; ?>
 

@@ -5,6 +5,32 @@
 <table style="border-collapse: collapse;">
 
     <?php $k=$_page*$_config['items_on_page']; ?>
+    <tr  style="border-collapse: collapse;">
+        <td style="border: solid 1px black; padding: 10px">
+            Number
+        </td>
+        <td style="border: solid 1px black; padding: 10px">
+            Id
+        </td>
+        <td style="border: solid 1px black; padding: 10px">
+            Category id
+        </td>
+        <td style="border: solid 1px black; padding: 10px">
+            Product title
+        </td>
+        <td style="border: solid 1px black; padding: 10px">
+            Price
+        </td>
+        <td style="border: solid 1px black; padding: 10px">
+            Description
+        </td>
+        <td style="border: solid 1px black; padding: 10px">
+            Action
+        </td>
+        <td style="border: solid 1px black; padding: 10px">
+            Action
+        </td>
+    </tr>
     <?php foreach( $data['products'] as $product) { ?>
         <?php $k++; ?>
 
