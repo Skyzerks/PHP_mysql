@@ -7,7 +7,8 @@ function show($string, $extra = [])
         //add more if needed
         'post' => $_POST,
         'session' => $_SESSION,
-        'get' => $_GET
+        'get' => $_GET,
+        'cookie' => $_COOKIE
     ];
     foreach ($array as $key=> $var){
         if($string==$key){
@@ -20,8 +21,6 @@ function show($string, $extra = [])
             exit();
         }
     }
-
-
 }
 
 function cap($string, $type){

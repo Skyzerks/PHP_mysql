@@ -1,7 +1,9 @@
-
+<!--<br>-->
+<!--<a href="/basket">Discard</a>-->
+<!--<br>-->
 
 <table style="border-collapse: collapse;">
-    <?php $k=0?><!--    $_page*$_config['items_on_page']; ?>-->
+    <?php $k=0; $total=0;?><!--    $_page*$_config['items_on_page']; ?>-->
     <tr  style="border-collapse: collapse;">
         <td style="border: solid 1px black; padding: 10px">
             Number
@@ -35,8 +37,21 @@
 <!--            <td style="border: solid 1px black; padding: 10px">-->
 <!--                --><?php //unset($product);?><!--">Видалити</a>-->
 <!--            </td>-->
+            <?php $total+=$product['price']; ?>
         </tr>
     <?php } ?>
+    <tr  style="border-collapse: collapse;">
+        <td style="border: solid 1px black; padding: 10px">
+        </td>
+        <td style="border: solid 1px black; padding: 10px">
+        </td>
+        <td style="border: solid 1px black; padding: 10px">
+            Total price:
+        </td>
+        <td style="border: solid 1px black; padding: 10px">
+            <?=$total ?>
+        </td>
+    </tr>
 </table>
 <hr/>
 

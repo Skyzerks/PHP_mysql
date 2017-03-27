@@ -3,7 +3,7 @@
         'Home'      => '',
         'Users'     => '/user',
         'Categories'=> '/categories',
-        'Products'  => '/product',
+        'Products'  => '/products',
         'Reviews'   => '/review',
         'Orders'    => '/order'
     ];

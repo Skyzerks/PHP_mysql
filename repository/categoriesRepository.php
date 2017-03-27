@@ -12,8 +12,12 @@ function getCategoriesCount( $pdo ) {
 }
 
 function getCategories( $pdo ) {
-    $categories = sql($pdo,
-        'SELECT * FROM `categories` ORDER BY `title`',
+    global $_config, $_page;
+
+    $categories= sql($pdo,
+        'SELECT * FROM `categories` 
+        ORDER BY `id` DESC 
+        LIMIT '.($_page*20).','.$_config['items_on_page'],
         [],
         'rows'
     );
