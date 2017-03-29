@@ -4,8 +4,8 @@
         'Users'     => '/user',
         'Categories'=> '/categories',
         'Products'  => '/products',
-        'Reviews'   => '/review',
-        'Orders'    => '/order'
+        'Reviews'   => '/reviews',
+        'Orders'    => '/orders'
     ];
 ?>
 <?php foreach ($headerRouts as $name => $route){?>
