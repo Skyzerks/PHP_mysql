@@ -41,6 +41,9 @@
 <hr/>
 <a href="/"><button>Main page</button></a>
 <a href="/basket"><button>To cart</button></a>
+<?php if($_SESSION['role']=='admin'){?>
+    <a href="/admin"><button>Admin page</button></a>
+<?php } ?>
 <br/>
 <hr/>
 

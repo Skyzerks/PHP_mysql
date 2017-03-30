@@ -21,6 +21,9 @@ if($_action == 'order') {
     
     unset( $_SESSION['basket'] );
 //use function to add bootstrap
+
+
+
     view('order');
 }
 

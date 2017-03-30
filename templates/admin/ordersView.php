@@ -9,9 +9,8 @@
 <a href="/admin/orders/?method=create">Create order</a>
 <br>
 
+<?php global $pdo; ?>
 
-
-<br>
 <table style="border-collapse: collapse;">
 
     <?php $k=$_page*$_config['items_on_page']; ?>
@@ -22,6 +21,9 @@
         </td>
         <td style="border: solid 1px black; padding: 10px">
             Id
+        </td>
+        <td style="border: solid 1px black; padding: 10px">
+            User Id
         </td>
         <td style="border: solid 1px black; padding: 10px">
             Product id
@@ -45,8 +47,9 @@
             Action
         </td>
     </tr>
-    <?php foreach ($data['orders'] as $order){?>
-        <?php $k++; ?>
+    <?php foreach ($data['orders'] as $key => $order){?>
+        <?php $k++;?>
+<!--        --><?php //if(isset($order['user_name'])){?>
 
         <tr  style="border-collapse: collapse;">
             <td style="border: solid 1px black; padding: 10px">
@@ -57,10 +60,10 @@
                 <?=$order['id']?>
             </td>
             <td style="border: solid 1px black; padding: 10px">
-                <?=$order['user_id']?>
+                <?=$order['user_name']?>
             </td>
             <td style="border: solid 1px black; padding: 10px">
-                <?=json_decode($order['product_ids'])?>
+                <?=$order['product_ids']?>
             </td>
             <td style="border: solid 1px black; padding: 10px">
                 <?=$order['created_at']?>
@@ -80,9 +83,9 @@
             <td style="border: solid 1px black; padding: 10px">
                 <a href="/admin/orders?method=delete&id=<?=$order['id']?>">Видалити</a>
             </td>
-
+        <?php } ?>
         </tr>
-    <?php } ?>
+<!--    --><?php //} ?>
 
 </table>
 

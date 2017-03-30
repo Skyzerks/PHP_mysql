@@ -18,7 +18,8 @@ if($_subAction=='orders'&&isset($_method)){
         }
         case 'edit':{
             $id = $_GET['id'];
-            $product = getOrder( $pdo, $id );
+            $order = getOrder( $pdo, $id );
+
 
             view('admin/orderEdit', ['order' => $order[0]]);
             break;
@@ -33,8 +34,9 @@ if($_subAction=='orders'&&isset($_method)){
         }
         case 'update':{
             $id = $_POST['form']['id'];
-            $res = saveOrder( $pdo, $_POST['form'] );
 
+            $res = saveOrder( $pdo, $_POST['form'] );
+            
             $_SESSION['flash_msg']='order information updated';
             header('location: /admin/orders/?method=edit&id='.$_POST['form']['id']);
             exit();
@@ -54,5 +56,11 @@ else if($_subAction == 'orders'){
 //    var_dump($allProductsCount);
 //    var_dump($_config['items_on_page']);
 //    var_dump($pagination);
+
+    foreach ($orders as $key => $order){
+        //adding new field to array
+        $orders[$key]['user_name'] = getUser($pdo, $order['user_id'])['name'];
+    }
+
     view('admin/orders', ['orders' => $orders, 'pagination' => $pagination]);
 }

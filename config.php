@@ -9,5 +9,6 @@ define("DBNAME", "base");
 
 $_config = [
     'admin_email' => 'admin@email.com',
-    'items_on_page' => 20
+    'items_on_page' => 20,
+    'order_statuses' => ['open', 'in_progress', 'closed']
 ];

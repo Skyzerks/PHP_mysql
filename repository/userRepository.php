@@ -34,7 +34,7 @@ function getUser( $pdo, $id ) {
         'rows'
     );
 
-    return $user;
+    return $user[0];
 }
 
 function saveUser( $pdo, $userData ) {
