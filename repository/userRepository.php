@@ -33,7 +33,6 @@ function getUser( $pdo, $id ) {
         [],
         'rows'
     );
-
     return $user[0];
 }
 

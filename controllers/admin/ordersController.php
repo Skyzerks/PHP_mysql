@@ -3,25 +3,26 @@ if($_subAction=='orders'&&isset($_method)){
     switch ($_method){
         case 'create': {
             $order = null;
-
             if($_POST){
                 $order = createOrder($pdo, $_POST['form']['user_id'], $_POST['form']['product_ids'], $_POST['form']['status']);
                 $_SESSION['flash_msg'] = 'Product created';
             }
-            
-            show('post'); //var_dump($_POST[null]);
-            echo '<br>';
+            else{
 
-            view('admin/createOrder', ['order' => $order[0]]);
-            unset($_POST);
+
+//            show('post'); //var_dump($_POST[null]);
+//            echo '<br>';
+
+                view('admin/createOrder', ['order' => $order[0]]);
+            }
             break;
         }
         case 'edit':{
             $id = $_GET['id'];
             $order = getOrder( $pdo, $id );
+            $order['user_name']= getUser($pdo, $order['user_id'])['name'];
 
-
-            view('admin/orderEdit', ['order' => $order[0]]);
+            view('admin/orderEdit', ['order' => $order]);
             break;
         }
         case 'delete':{

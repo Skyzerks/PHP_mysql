@@ -54,7 +54,7 @@ function saveProduct( $pdo, $userData ) {
 
 function createProduct($pdo, $title, $description, $price, $category_id){
     $insert = $pdo->prepare("INSERT INTO 
-                `products`(`title`,`description`,`price`,`category_id`) VALUES (?,?,?,?,?)");
+                `products`(`title`,`description`,`price`,`category_id`) VALUES (?,?,?,?)");
     $res = $insert->execute(array($title,$description,$price, $category_id));
     return $res;
 }

@@ -5,9 +5,14 @@
 <!--    <input type="hidden" name="form[id]" value="--><?//=$data['user']['id']?><!--">-->
 
     <input type="text" name="form[title]" value="<?=$data['product']['title']?>" placeholder="Enter title"><br/>
-    <input type="email" name="form[price]" value="<?=$data['product']['price']?>" placeholder="Enter price"><br/>
-    <input type="text" name="form[category_id]" value="<?=$data['product']['category_id']?>" placeholder="Enter category id"><br/>
-    <input type="text" name="form[description]" value="<?=$data['product']['description']?>" placeholder="Enter description"><br/>
+    <input type="text" name="form[price]" value="<?=$data['product']['price']?>" placeholder="Enter price"><br/>
+    <select name="form[category_id]" >
+        <?php foreach ($data['options']['categories'] as $category) { ?>
+            <option value="<?=$category['id']?>"><?=$category['title']?></option>
+        <?php } ?>
+    </select><br/>
+
+    <textarea rows="3" cols="30" name="form[description]" value="<?=$data['product']['description']?>" placeholder = "Enter your description"></textarea><br/>
 
     <button type="submit">Create</button>
 </form>

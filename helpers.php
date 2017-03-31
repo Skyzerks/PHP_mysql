@@ -29,8 +29,7 @@ function cap($string, $type){
 
 // Simple function to handle PDO prepared statements
 function sql($db, $q, $params = [], $return = null) {
-//    var_dump($q);
-    echo '<br>';
+//    var_dump($q); echo '<br>';
 //    exit();
     // Prepare statement
     $stmt = $db->prepare($q);

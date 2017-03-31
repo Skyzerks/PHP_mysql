@@ -3,17 +3,23 @@ if($_subAction=='products'&&isset($_method)){
     switch ($_method){
         case 'create': {
             $product = null;
-
             if($_POST){
-                $product= createProduct($pdo, $_POST['form']['title'], $_POST['form']['price'], $_POST['form']['category_id'], $_POST['form']['description']);
+                $product= createProduct($pdo, $_POST['form']['title'], $_POST['form']['description'], $_POST['form']['price'], $_POST['form']['category_id'] );
                 $_SESSION['flash_msg'] = 'Product created';
-            }
-            
-            show('post'); //var_dump($_POST[null]);
-            echo '<br>';
 
-            view('admin/createProduct', ['product' => $product[0]]);
-            unset($_POST);
+                header('location: /admin/products');
+                exit();
+            }
+            else{
+
+//              show('post'); //var_dump($_POST[null]);
+//              echo '<br>';
+                $options = [
+                    'categories' => getCategories($pdo)
+                ];
+
+                view('admin/createProduct', ['product' => $product[0], 'options'=>$options]);
+            }
             break;
         }
         case 'edit':{

@@ -11,14 +11,11 @@
 
     <?php
 //    var_dump($data );
-    $show_info = [
-        'name' => getUser($pdo, $data['order']['user_id'])['name'],
-        'products' => $data['order']['product_ids']
-    ]
+
     ?>
 
-    User: <strong><?=$show_info['name']?></strong></br>
-    Products: <strong><?=$show_info['products']?></strong></br>
+    User: <strong><?=$data['order']['user_name']?></strong></br>
+    Products: <strong><?=$data['order']['product_ids']?></strong></br>
     Total price: <strong><?=$data['order']['total_price'] ?></strong></br>
     <select name="form[status]" >
     <?php foreach ($_config['order_statuses'] as $opt) {

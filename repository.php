@@ -6,7 +6,8 @@ $repositoryRoutes = [
     'user',
     'categories',
     'products',
-    'orders'
+    'orders',
+    'reviews'
 ];
 foreach ($repositoryRoutes as $route){
     $path = 'repository/'.$route.'Repository.php';

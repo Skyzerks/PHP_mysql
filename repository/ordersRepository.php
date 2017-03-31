@@ -36,7 +36,7 @@ function getOrder($pdo, $id){
         'rows'
     );
 
-    return $order;
+    return $order[0];
 }
 
 function saveOrder( $pdo, $userData ) {
