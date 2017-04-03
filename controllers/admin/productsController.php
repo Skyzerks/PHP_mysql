@@ -2,7 +2,7 @@
 if($_subAction=='products'&&isset($_method)){
     switch ($_method){
         case 'create': {
-            //$product = null;
+            $product = null;
             if($_POST){
                 $product= createProduct($pdo, $_POST['form']['title'], $_POST['form']['description'], $_POST['form']['price'], $_POST['form']['category_id'] );
                 $_SESSION['flash_msg'] = 'Product created';
@@ -30,7 +30,7 @@ if($_subAction=='products'&&isset($_method)){
             break;
         }
         case 'delete':{
-            $id = $_POST['id'];
+            $id = $_GET['id'];
             deleteProduct( $pdo, $id );
 
             header('location: /admin/products');

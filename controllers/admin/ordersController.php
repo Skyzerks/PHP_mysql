@@ -26,7 +26,7 @@ if($_subAction=='orders'&&isset($_method)){
             break;
         }
         case 'delete':{
-            $id = $_POST['id'];
+            $id = $_GET['id'];
             deleteOrder( $pdo, $id );
 
             header('location: /admin/orders');

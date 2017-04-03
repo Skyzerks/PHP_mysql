@@ -40,12 +40,12 @@
                 <a href="/admin/user?method=edit&id=<?=$user['id']?>">Редагувати</a>
             </td>
             <td style="border: solid 1px black; padding: 10px">
-                <form action="/admin/user" method="post">
-                    <input type="hidden" name="method" value="delete">
-                    <input type="hidden" name="id" value="<?=$user['id']?>">
-                    <button type="submit">Delete</button>
-                </form>
-<!--                <a href="/admin/user?method=delete&id=--><?//=$user['id']?><!--">Видалити</a>-->
+<!--                <form action="/admin/user" method="post">-->
+<!--                    <input type="hidden" name="method" value="delete">-->
+<!--                    <input type="hidden" name="id" value="--><?//=$user['id']?><!--">-->
+<!--                    <button type="submit">Delete</button>-->
+<!--                </form>-->
+                <a href="/admin/user?method=delete&id=<?=$user['id']?>">Видалити</a>
             </td>
         </tr>
     <?php } ?>

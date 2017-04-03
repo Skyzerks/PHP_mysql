@@ -57,12 +57,12 @@
                 <a href="/admin/products?method=edit&id=<?=$product['id']?>">Редагувати</a>
             </td>
             <td style="border: solid 1px black; padding: 10px">
-                <form action="/admin/products" method="post">
-                    <input type="hidden" name="method" value="delete">
-                    <input type="hidden" name="id" value="<?=$product['id']?>">
-                    <button type="submit">Delete</button>
-                </form>
-<!--                <a href="/admin/products?method=delete&id=--><?//=$product['id']?><!--">Видалити</a>-->
+<!--                <form action="/admin/products" method="post">-->
+<!--                    <input type="hidden" name="method" value="delete">-->
+<!--                    <input type="hidden" name="id" value="--><?//=$product['id']?><!--">-->
+<!--                    <button type="submit">Delete</button>-->
+<!--                </form>-->
+                <a href="/admin/products?method=delete&id=<?=$product['id']?>">Видалити</a>
             </td>
         </tr>
     <?php } ?>

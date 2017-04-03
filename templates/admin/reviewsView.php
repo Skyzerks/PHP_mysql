@@ -64,12 +64,12 @@
                 <a href="/admin/reviews?method=edit&id=<?=$review['id']?>">Редагувати</a>
             </td>
             <td style="border: solid 1px black; padding: 10px">
-                <form action="/admin/reviews" method="post">
-                    <input type="hidden" name="method" value="delete">
-                    <input type="hidden" name="id" value="<?=$review['id']?>">
-                    <button type="submit">Delete</button>
-                </form>
-<!--                <a href="/admin/reviews?method=delete&id=--><?//=$review['id']?><!--">Видалити</a>-->
+<!--                <form action="/admin/reviews" method="post">-->
+<!--                    <input type="hidden" name="method" value="delete">-->
+<!--                    <input type="hidden" name="id" value="--><?//=$review['id']?><!--">-->
+<!--                    <button type="submit">Delete</button>-->
+<!--                </form>-->
+                <a href="/admin/reviews?method=delete&id=<?=$review['id']?>">Видалити</a>
             </td>
         </tr>
     <?php } ?>

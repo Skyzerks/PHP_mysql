@@ -25,7 +25,7 @@ if( $_subAction == 'reviews'&&isset($_method)){
             break;
         }
         case 'edit':{
-            $id = $_POST['id'];
+            $id = $_GET['id'];
             $review = getReview( $pdo, $id );
 
             view('admin/reviewEdit', ['review' => $review]);

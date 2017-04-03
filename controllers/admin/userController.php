@@ -23,7 +23,7 @@ if( $_subAction == 'user'&&isset($_method)){
             break;
         }
         case 'delete':{
-            $id = $_POST['id'];
+            $id = $_GET['id'];
             deleteUser( $pdo, $id );
 
             header('location: /admin/user');
