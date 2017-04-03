@@ -24,7 +24,7 @@ if($_subAction=='categories'&&isset($_method)){
             break;
         }
         case 'delete':{
-            $id = $_GET['id'];
+            $id = $_POST['id'];
             deleteCategory( $pdo, $id );
 
             header('location: /admin/categories');

@@ -81,7 +81,12 @@
                 <a href="/admin/orders?method=edit&id=<?=$order['id']?>">Редагувати</a>
             </td>
             <td style="border: solid 1px black; padding: 10px">
-                <a href="/admin/orders?method=delete&id=<?=$order['id']?>">Видалити</a>
+                <form action="/admin/orers" method="post">
+                    <input type="hidden" name="method" value="delete">
+                    <input type="hidden" name="id" value="<?=$order['id']?>">
+                    <button type="submit">Delete</button>
+                </form>
+<!--                <a href="/admin/orders?method=delete&id=--><?//=$order['id']?><!--">Видалити</a>-->
             </td>
         <?php } ?>
         </tr>

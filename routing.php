@@ -55,9 +55,9 @@ if( $_SERVER['REQUEST_URI'] != '/' ) {
         include_once 'controllers/404Controller.php';
         exit();
     }
-
+    
     if( $_action == 'admin' ) {
-        $_method = isset($_GET['method']) ? $_GET['method'] : null; //$_method = $_GET['method'] ?? null;
+        $_method = isset($_GET['method']) ? $_GET['method'] : isset($_POST['method'])? $_POST['method']: null; //$_method = $_GET['method'] ?? null;
         $_page = isset($_GET['page']) ? $_GET['page'] : 0;
     }
 

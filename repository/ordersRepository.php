@@ -1,6 +1,6 @@
 <?php
 
-global $_config;
+//global $_config;
 
 function getOrdersCount( $pdo ) {
 

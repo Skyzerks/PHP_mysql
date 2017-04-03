@@ -45,7 +45,12 @@
                 <a href="/admin/categories?method=edit&id=<?=$category['id']?>">Редагувати</a>
             </td>
             <td style="border: solid 1px black; padding: 10px">
-                <a href="/admin/categories?method=delete&id=<?=$category['id']?>">Видалити</a>
+                <form action="/admin/categories" method="post">
+                    <input type="hidden" name="method" value="delete">
+                    <input type="hidden" name="id" value="<?=$category['id']?>">
+                    <button type="submit">Delete</button>
+                </form>
+<!--                <a href="/admin/categories?method=delete&id=--><?//=$category['id']?><!--">Видалити</a>-->
             </td>
 
         </tr>
